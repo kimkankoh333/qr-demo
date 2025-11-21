@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lucky Draw Registration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <h1>Lucky Draw Registration</h1>
+  <p>Enter your mobile number to join:</p>
+
+  <form id="f">
+    <input type="tel" id="phone" placeholder="+65 9123 4567" required />
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="result" style="display:none; margin-top:20px; background:#fff7aa; padding:12px;">
+    You just gave this website your phone number:
+    <b id="num"></b>
+    <br><br>
+    In a real phishing site, this could be secretly stored.
+  </p>
+
+  <script>
+    document.getElementById("f").addEventListener("submit", function(e){
+      e.preventDefault();
+      let x = document.getElementById("phone").value;
+      document.getElementById("num").innerText = x;
+      document.getElementById("result").style.display = "block";
+      console.log("Captured (demo):", x);
+    });
+  </script>
+</body>
+</html>
